@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useFaceDirection, type FaceDirection } from '../hooks/useFaceDirection';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import heroBg from '../assets/hero/hero-bg.png';
 import sparkTopLeft from '../assets/hero/spark-top-left.svg';
 import sparkRight from '../assets/hero/spark-right.svg';
@@ -33,10 +34,14 @@ const FACE_IMAGES: Record<FaceDirection, string> = {
 export default function Hero() {
   const faceRef = useRef<HTMLDivElement>(null);
   const direction = useFaceDirection(faceRef);
+  const stage = useScrollReveal<HTMLDivElement>();
 
   return (
     <section className="hero" id="top" aria-label="Intro">
-      <div className="hero__stage">
+      <div
+        className={`hero__stage reveal ${stage.visible ? 'reveal--visible' : ''}`}
+        ref={stage.ref}
+      >
         <img className="hero__bg" src={heroBg} alt="Portfolio" />
 
         <img
@@ -59,6 +64,10 @@ export default function Hero() {
             alt="Illustrated character whose gaze follows your cursor"
           />
         </div>
+
+        <p className="hero__meta hero__meta--year">2026</p>
+        <p className="hero__meta hero__meta--role">Sr. Product Designer</p>
+        <p className="hero__meta hero__meta--exp">4+ yr exp</p>
       </div>
     </section>
   );

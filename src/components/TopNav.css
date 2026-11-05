@@ -186,6 +186,10 @@
   height: 4.6875rem;
 }
 
+.logo-menu__page--menu > .logo-menu__row:last-child {
+  margin-top: auto;
+}
+
 .logo-menu__card {
   flex: 1;
   display: flex;

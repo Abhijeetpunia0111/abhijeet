@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent, type MouseEvent } from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import brandLogo from '../assets/hero/brand-logo.svg';
 import closeIcon from '../assets/hero/close-x.svg';
 import './TopNav.css';
@@ -19,6 +20,7 @@ export default function TopNav() {
   const [formReason, setFormReason] = useState('');
   const navRef = useRef<HTMLElement>(null);
   const copyTimeoutRef = useRef<number | null>(null);
+  const links = useScrollReveal<HTMLElement>();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,7 +105,11 @@ export default function TopNav() {
         <img className="top-nav__brand-logo" src={brandLogo} alt="Abhijeet Punia" />
       </a>
 
-      <nav className="top-nav__links" aria-label="Primary">
+      <nav
+        className={`top-nav__links reveal ${links.visible ? 'reveal--visible' : ''}`}
+        ref={links.ref}
+        aria-label="Primary"
+      >
         <a href="#works">Works</a>
         <a href="#resume">Resume</a>
         <a className="top-nav__cta" href="#contact">
