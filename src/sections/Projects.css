@@ -1,0 +1,252 @@
+.projects {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem clamp(1.25rem, 4vw, 3.375rem) 4rem;
+}
+
+.projects__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.projects__title-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.projects__eyebrow {
+  font-family: 'Happy Monkey', cursive;
+  font-size: 1.125rem;
+  color: #ee5b27;
+  margin-left: 0.125rem;
+}
+
+.projects__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: 'Fredoka', var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+}
+
+.projects__title-icon {
+  width: clamp(2.25rem, 5vw, 3.75rem);
+  height: auto;
+  transform: translateY(-35%) rotate(-2deg);
+  border-radius: 0.25rem;
+}
+
+.projects__description {
+  margin: 0;
+  max-width: 44rem;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-card {
+  position: relative;
+}
+
+.project-card__stamp {
+  position: absolute;
+  top: -2.5rem;
+  right: 1.5rem;
+  width: clamp(5.5rem, 9vw, 8.75rem);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.project-card__surface {
+  position: relative;
+  overflow: hidden;
+  background: #f0f0f1;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 34rem;
+}
+
+.project-card__texture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.project-card__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 28rem;
+}
+
+.project-card__logo {
+  display: block;
+  height: 2.25rem;
+  width: auto;
+}
+
+.project-card__logo--finjoy {
+  height: 2.75rem;
+}
+
+.project-card__headline {
+  margin: 0;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  color: var(--color-text-strong);
+}
+
+.project-card__tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-card__tags li {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.project-card__media {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.project-card__devices {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1061.97 / 671.373;
+}
+
+.project-card__device {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.project-card__device--tv {
+  left: 0;
+  top: 0;
+  width: 84.3%;
+  height: 100%;
+}
+
+.project-card__device--tablet {
+  left: 45.9%;
+  top: 41%;
+  width: 43.6%;
+  height: 52.9%;
+}
+
+.project-card__device--phone {
+  left: 83.4%;
+  top: 51.8%;
+  width: 12.7%;
+  height: 34%;
+  object-position: center 18%;
+}
+
+.project-card__hero {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1277.46 / 736.481;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.project-card__stat {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: #fff;
+}
+
+.project-card__stat-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.75rem;
+  min-width: 0;
+}
+
+.project-card__stat-text p {
+  margin: 0;
+}
+
+.project-card__stat-text > p:first-child {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.project-card__stat-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+.project-card__stat-sub {
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.project-card__stat-accent {
+  flex: 0 0 16rem;
+  background-image: url('../assets/projects/card-texture.png');
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .project-card__stat-accent {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-card__surface {
+    min-height: auto;
+    padding-bottom: 1.5rem;
+  }
+
+  .project-card__devices {
+    aspect-ratio: auto;
+    height: 16rem;
+  }
+
+  .project-card__stat {
+    flex-direction: column;
+  }
+}

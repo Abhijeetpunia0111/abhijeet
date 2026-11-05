@@ -1,0 +1,63 @@
+.hero {
+  padding: 0 clamp(1.25rem, 4vw, 3.375rem) calc(2.5rem + 14px);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1280 / 756;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 81.5%;
+  object-fit: cover;
+  object-position: center 60%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero__spark {
+  position: absolute;
+  width: 14%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero__spark--top-left {
+  top: 14.5%;
+  left: 20.7%;
+  width: 8.8%;
+}
+
+.hero__spark--right {
+  top: 53.3%;
+  left: 75.1%;
+  width: 14.25%;
+}
+
+.hero__face {
+  position: absolute;
+  top: 31.66%;
+  left: 23.39%;
+  width: 53.22%;
+  aspect-ratio: 1;
+}
+
+.hero__face-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 640px) {
+  .hero__stage {
+    aspect-ratio: 1280 / 900;
+  }
+}
